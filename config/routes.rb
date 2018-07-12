@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   # verb "/urls" => "namespace/controllers#action"
  namespace :client do
     get "/products" => "products#index"
+    get "/products/:id" => "products#show"
   end
 end
