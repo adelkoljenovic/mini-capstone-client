@@ -11,4 +11,8 @@ class Client::ProductsController < ApplicationController
     @product = response.body
     render "show.html.erb"
   end
+
+  def new
+    render "new.html.erb"
+  end
 end
