@@ -1,6 +1,7 @@
-<form action="/client/products" method="post">
+<!-- <form action="/client/products" method="post"> -->
+<%= form_tag "/client/products", method: :post do%>
   <div>
-    Product:<input type="text" name="input_price">
+    Product Name:<input type="text" name="input_name">
   </div>
   <div>
     Price:<input type="text" name="input_price">
@@ -12,4 +13,5 @@
     Description:<input type="text" name="input_description">
   </div>
   <input type="submit" value="Create a new product">
-</form>
+<!-- </form> -->
+<% end %>
