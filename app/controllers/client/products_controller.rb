@@ -26,7 +26,8 @@ class Client::ProductsController < ApplicationController
       }
     )
     @product = response.body
-    render "show.html.erb"
+    # render "show.html.erb"
+    redirect_to "/client/products/#{@product['id']}"
   end
 
   def edit
@@ -47,12 +48,12 @@ class Client::ProductsController < ApplicationController
     response = Unirest.patch("localhost:3000/api/products/#{product_id}",
       parameters: client_params)
     @product = response.body
-    render "show.html.erb"
+    redirect_to "/client/products/#{@product['id']}"
 
     def destroy
       product_id = params[:id]
       response = Unirest.delete("localhost:3000/api/products/#{product_id}")
-      render "destroy.html.erb"
+      redirect_to "/client/products"
     end
   end
 end
