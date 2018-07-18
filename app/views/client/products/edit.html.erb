@@ -1,0 +1,17 @@
+I am the edit pg
+
+<%= form_tag "/client/products/#{@product["id"]}", method: :patch do%>
+  <div>
+    Product Name:<input type="text" name="input_name" value="<%= @product["name"]%>"> 
+  </div>
+  <div>
+    Price:<input type="text" name="input_price" value="<%= @product["price"]%>">
+  </div>
+  <div>
+    Image URL:<input type="text" name="input_image_url" value="<%= @product["image_url"]%>"> 
+  </div>
+  <div>
+    Description:<input type="text" name="input_description" value="<%= @product["description"]%>">
+  </div>
+  <input type="submit" value="Create a new product">
+<% end %>
