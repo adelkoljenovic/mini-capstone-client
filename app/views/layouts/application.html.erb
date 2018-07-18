@@ -11,6 +11,9 @@
 
   <body>
     <a href="/client/products">Home Page</a>
+    <% flash.each do |name, message| %>
+      <%= message %>
+    <% end %>
     <a href="/client/signup">Sign Up</a>
     <a href="/client/login">Log In</a>
     <a href="/client/logout" data-method="delete">Log Out</a>
