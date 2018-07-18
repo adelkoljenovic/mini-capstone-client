@@ -1,3 +1,7 @@
+<% flash.each do |name, message| %>
+  <%= message %>
+<% end %>
+
 <p>id: <%= @product['id'] %></p>
 <p>name: <%=  @product['name'] %></p>
 <p>price: <%=  @product['price'] %></p>

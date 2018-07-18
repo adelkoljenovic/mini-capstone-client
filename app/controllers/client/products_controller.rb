@@ -27,6 +27,7 @@ class Client::ProductsController < ApplicationController
     )
     @product = response.body
     # render "show.html.erb"
+    flash[:success] = "You created a new item."
     redirect_to "/client/products/#{@product['id']}"
   end
 
@@ -48,11 +49,13 @@ class Client::ProductsController < ApplicationController
     response = Unirest.patch("localhost:3000/api/products/#{product_id}",
       parameters: client_params)
     @product = response.body
+    flash[:success] = "You updated an item."
     redirect_to "/client/products/#{@product['id']}"
 
     def destroy
       product_id = params[:id]
       response = Unirest.delete("localhost:3000/api/products/#{product_id}")
+      flash[:danger] = "You deleted an item."
       redirect_to "/client/products"
     end
   end
