@@ -1,10 +1,19 @@
 
 
-<p>id: <%= @product['id'] %></p>
-<p>name: <%=  @product['name'] %></p>
-<p>price: <%=  @product['price'] %></p>
-<p>image_url: <%=  @product['image_url'] %></p>
-<p>description: <%=  @product['description'] %></p>
+<p>Id: <%= @product['id'] %></p>
+<p>Name: <%=  @product['name'] %></p>
+
+<% if @product["formatted"]["discounted"] %>
+    <h4 style="color: red;">Price: <%=  @product['price'] %></h4>
+    <h3> Discount Item! </h3>
+  <% else %>
+    <h4>Price: <%=  @product['price'] %></h4>
+    <h3> Everyday Value! </h3>
+  <% end %>
+<p>Tax: <%=  @product['formatted']['tax'] %></p>
+<p>Total: <%=  @product['formatted']['total'] %></p>
+<p>Image_url: <%=  @product['image_url'] %></p>
+<p>Description: <%=  @product['description'] %></p>
 
 <p><a href="/client/products/<%= @product['id'] %>/edit">Edit or Delete this item</a></p>
 

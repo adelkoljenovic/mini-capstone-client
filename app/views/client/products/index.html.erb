@@ -6,6 +6,11 @@
   <p>id: <%= product['id'] %></p>
   <p>name: <a href="/client/products/<%= product['id'] %>"><%= product['name'] %></a></p>
   <p>price: <%=  product['price'] %></p>
+  <% if product["price"] < 10 %>
+    <h3> Discount Item! </h3>
+  <% else %>
+    <h3> Everyday Value! </h3>
+  <% end %>
   <p>image_url: <%=  product['image_url'] %></p>
   <p>description: <%=  product['description'] %></p>
   <hr>
